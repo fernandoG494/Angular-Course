@@ -10,4 +10,9 @@ export class MainPageComponent {
     { nombre: 'Goku', poder: 15000 },
     { nombre: 'Vegeta', poder: 10000 },
   ];
+
+  nuevo: Personaje = {
+    nombre: 'Maestro Roshi',
+    poder: 123123,
+  };
 }
