@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Personaje } from '../interfaces/dbz.interface';
+import { Component, Input } from '@angular/core';
+
 import { DbzService } from '../services/dbz.service';
+import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
   selector: 'app-agregar',
