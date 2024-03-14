@@ -15,7 +15,7 @@ export class DbzService {
     return [...this._personajes];
   }
 
-  agregarPersonaje(personaje: Personaje) {
+  agregarPersonaje(personaje: Personaje):void {
     this._personajes.push(personaje);
   }
 }
