@@ -11,7 +11,7 @@ export class GifsService {
     return [...this._historial];
   }
 
-  buscarGifs(query: string) {
+  async buscarGifs(query: string) {
     query = query.trim().toLowerCase();
 
     if (!this._historial.includes(query)) {
@@ -19,12 +19,11 @@ export class GifsService {
       this._historial = this._historial.splice(0, 10);
     }
 
-    fetch(
+    const response = await fetch(
       'https://api.giphy.com/v1/gifs/search?api_key=KinLWxGq0F5UdV61ciSFzJTW002vNqMS&q=dragon ball z&limit=10'
-    ).then((resp) => {
-      resp.json().then((data) => {
-        console.log(data);
-      });
-    });
+    );
+    const data = await response.json();
+
+    console.log(data);
   }
 }
