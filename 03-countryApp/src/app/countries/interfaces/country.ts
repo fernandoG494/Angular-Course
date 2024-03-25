@@ -6,35 +6,35 @@ export interface Country {
   cca2: string;
   ccn3: string;
   cca3: string;
+  cioc: string;
   independent: boolean;
   status: string;
   unMember: boolean;
-  currencies: { [key: string]: Currency };
+  currencies: Currencies;
   idd: Idd;
   capital: string[];
   altSpellings: string[];
   region: string;
   subregion: string;
-  languages: { [key: string]: string };
+  languages: Languages;
   translations: { [key: string]: Translation };
   latlng: number[];
   landlocked: boolean;
+  borders?: string[];
   area: number;
   demonyms: Demonyms;
   flag: string;
   maps: Maps;
   population: number;
+  gini?: { [key: string]: number };
+  fifa: string;
   car: Car;
   timezones: string[];
   continents: string[];
-  flags: Flags;
+  flags: CoatOfArms;
   coatOfArms: CoatOfArms;
   startOfWeek: string;
   capitalInfo: CapitalInfo;
-  cioc?: string;
-  borders?: string[];
-  gini?: { [key: string]: number };
-  fifa?: string;
   postalCode?: PostalCode;
 }
 
@@ -43,7 +43,7 @@ export interface CapitalInfo {
 }
 
 export interface Car {
-  signs?: string[];
+  signs: string[];
   side: string;
 }
 
@@ -52,14 +52,23 @@ export interface CoatOfArms {
   svg?: string;
 }
 
-export interface Currency {
+export interface Currencies {
+  USD?: Clp;
+  CRC?: Clp;
+  DOP?: Clp;
+  EUR?: Clp;
+  CLP?: Clp;
+  YER?: Clp;
+}
+
+export interface Clp {
   name: string;
   symbol: string;
 }
 
 export interface Demonyms {
   eng: Eng;
-  fra?: Eng;
+  fra: Eng;
 }
 
 export interface Eng {
@@ -67,15 +76,16 @@ export interface Eng {
   m: string;
 }
 
-export interface Flags {
-  png: string;
-  svg: string;
-  alt?: string;
-}
-
 export interface Idd {
   root: string;
   suffixes: string[];
+}
+
+export interface Languages {
+  spa?: string;
+  ita?: string;
+  eng?: string;
+  ara?: string;
 }
 
 export interface Maps {
@@ -86,7 +96,14 @@ export interface Maps {
 export interface Name {
   common: string;
   official: string;
-  nativeName: { [key: string]: Translation };
+  nativeName: NativeName;
+}
+
+export interface NativeName {
+  spa?: Translation;
+  ita?: Translation;
+  eng?: Translation;
+  ara?: Translation;
 }
 
 export interface Translation {

@@ -1,5 +1,5 @@
-import { Country } from './country.interface.ts';
-import { Region } from './region.type.js';
+import { Country } from './country';
+import { Region } from './region.type';
 
 export interface CacheStore {
   byCapital: TermCountries;
