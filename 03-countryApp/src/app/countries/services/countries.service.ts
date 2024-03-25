@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Country } from '../interfaces/country';
+import { Country } from '../interfaces/country.interface.ts';
 import { Observable, catchError, delay, map, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CountriesService {
   constructor(private http: HttpClient) {}
+
+  public cacheStore = {
+    byCapital: { termn: '', countries: [] },
+    byCountry: { termn: '', countries: [] },
+    byRegion: { termn: '', countries: [] },
+  };
 
   private apiUrl: string = 'https://restcountries.com/v3.1';
 
@@ -16,6 +22,7 @@ export class CountriesService {
 
   searchCountryByAlphaCode(code: string): Observable<Country | null> {
     const url: string = `${this.apiUrl}/alpha/${code}`;
+
     return this.http.get<Country[]>(url).pipe(
       map((countries: any) => (countries.length > 0 ? countries[0] : null)),
       catchError(() => of(null))

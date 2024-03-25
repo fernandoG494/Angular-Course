@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Country } from '../../interfaces/country';
+import { Country } from '../../interfaces/country.interface.ts';
 import { CountriesService } from '../../services/countries.service';
 
 @Component({
