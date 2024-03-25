@@ -7,12 +7,14 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AboutPageComponent } from './pages/AboutPage/AboutPage.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { ContactComponent } from './pages/Contact/contact.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
     AboutPageComponent,
     ContactComponent,
     HomePageComponent,
+    LoadingSpinnerComponent,
     SearchBoxComponent,
     SidebarComponent,
   ],
@@ -20,6 +22,7 @@ import { ContactComponent } from './pages/Contact/contact.component';
   exports: [
     AboutPageComponent,
     HomePageComponent,
+    LoadingSpinnerComponent,
     SearchBoxComponent,
     SidebarComponent,
   ],

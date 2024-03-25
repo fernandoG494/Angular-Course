@@ -11,11 +11,13 @@ export class ByCapitalPageComponent {
   constructor(private countriesServices: CountriesService) {}
 
   public countries: Country[] = [];
+  public isLoading: boolean = false;
 
-  searchByCapital(term: string) {
+  searchByCapital(term: string): void {
+    this.isLoading = true;
     this.countriesServices.searchCapital(term).subscribe((countries) => {
-      console.log(countries);
       this.countries = countries;
+      this.isLoading = false;
     });
   }
 }
