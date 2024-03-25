@@ -13,7 +13,6 @@ export class ByCountryPageComponent {
 
   searchByCountry(term: string) {
     this.countriesServices.searchCountry(term).subscribe((countries) => {
-      console.log(countries);
       this.countries = countries;
     });
   }
