@@ -4,4 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-basics-page',
   templateUrl: './basics-page.component.html',
 })
-export class BasicsPageComponent {}
+export class BasicsPageComponent {
+  public nameLower = 'fernando';
+  public nameUpper = 'FERNANDO';
+  public fullName = 'fErNaNdO';
+
+  public customDate: Date = new Date();
+}
