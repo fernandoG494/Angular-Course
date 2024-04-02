@@ -13,6 +13,7 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { CardComponent } from './components/card/card.component';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
 
+
 @NgModule({
   declarations: [
     HeroPageComponent,
@@ -30,6 +31,6 @@ import { HeroImagePipe } from './pipes/hero-image.pipe';
     ReactiveFormsModule,
     HeroesRoutingModule,
     MaterialModule,
-  ],
+  ]
 })
-export class HeroesModule {}
+export class HeroesModule { }
