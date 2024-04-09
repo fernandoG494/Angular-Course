@@ -15,9 +15,23 @@
             type="text"
           />
 
-          <span class="form-text text-danger">
-            <!-- Debe de ser de 3 letras -->
-            error message
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              myForm.controls['name'].getError('required') &&
+              myForm.controls['name'].touched
+            "
+          >
+            Este campo es requerido
+          </span>
+          <span
+            class="form-text text-danger"
+            *ngIf="
+              myForm.controls['name'].getError('minlength') &&
+              myForm.controls['name'].touched
+            "
+          >
+            Este campo requiere un mínimo de tres letras
           </span>
         </div>
       </div>
