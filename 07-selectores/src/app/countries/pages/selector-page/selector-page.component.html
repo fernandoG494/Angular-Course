@@ -1,1 +1,35 @@
-<h1>selector page works!</h1>
+<h1>Selectores anidados!</h1>
+<hr />
+
+<form [formGroup]="myForm">
+  <!-- Region -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label"> Continente: </label>
+      <select formControlName="region" class="form-control">
+        <option value="">-- Seleccione el continente --</option>
+        <option *ngFor="let region of regions" [value]="region">
+          {{ region }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Countries -->
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label"> País: </label>
+      <select formControlName="country" class="form-control">
+        <option value="">-- Seleccione un País --</option>
+        <!-- <option *ngFor="let region of regions" [value]="region">
+          {{ region }}
+        </option> -->
+      </select>
+    </div>
+  </div>
+</form>
+
+<h3>Formulario:</h3>
+<code>{{ myForm.value | json }}</code>
+
+<p>is Form Valid: {{ myForm.valid }}</p>
