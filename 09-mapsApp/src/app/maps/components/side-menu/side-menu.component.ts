@@ -8,12 +8,12 @@ interface MenuItem {
 @Component({
   selector: 'maps-side-menu',
   templateUrl: './side-menu.component.html',
-  styleUrl: './side-menu.component.css',
+  styleUrls: ['./side-menu.component.css'],
 })
 export class SideMenuComponent {
-  public menuItem: MenuItem[] = [
-    { route: '/maps/fullscreen', name: 'Full-Screen' },
-    { route: '/maps/zoom-rage', name: 'Zoom-Range' },
+  public menuItems: MenuItem[] = [
+    { route: '/maps/fullscreen', name: 'FullScreen' },
+    { route: '/maps/zoom-range', name: 'ZoomRange' },
     { route: '/maps/markers', name: 'Markers' },
     { route: '/maps/properties', name: 'Houses' },
   ];
